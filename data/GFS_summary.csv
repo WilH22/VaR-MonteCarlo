@@ -1,0 +1,14 @@
+Metric,Value
+Ticker,GFS
+Start_Date,2021-01-01
+End_Date,2025-06-15
+Initial_Price,36.72
+Days_Simulated,31
+Trials,10000
+VaR_95%,27.28
+CVaR,25.35
+Lambda_JumpsPerYear,2.769
+Mu_JumpMean,0.08053
+Sigma_JumpStd,0.09876
+Total_Days_Observed,910
+Total_Jumps_Observed,10
