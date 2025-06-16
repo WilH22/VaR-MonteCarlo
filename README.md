@@ -54,7 +54,7 @@ This project simulates future stock price paths using a Monte Carlo method with 
 
 ## 📁 Project Structure
 
-![image](https://github.com/user-attachments/assets/9ebbf554-e224-468c-bea3-56dc151c6c9f)
+![image](https://github.com/user-attachments/assets/4ad8d00c-dcc8-4fa8-897d-cd385930b827)
 
 ---
 
