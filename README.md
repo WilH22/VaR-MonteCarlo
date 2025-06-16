@@ -54,15 +54,8 @@ This project simulates future stock price paths using a Monte Carlo method with 
 
 ## 📁 Project Structure
 
-├── main.ipynb # Jupyter notebook for running simulations
-├── data/
-│ ├── {Ticker}_price_paths.csv # Simulated price paths
-│ ├── {Ticker}_jumps.csv # Historical jump detection log
-│ └── {Ticker}_summary.csv # Summary of simulation and risk metrics
-├── modules/
-│ ├── simulation.py # Monte Carlo simulation functions
-│ ├── risk_metrics.py # VaR, CVaR calculations
-│ └── jump_detection.py # Jump detection and statistics
+![image](https://github.com/user-attachments/assets/9ebbf554-e224-468c-bea3-56dc151c6c9f)
+
 ---
 
 ## 🧪 How It Works
@@ -87,9 +80,8 @@ This project simulates future stock price paths using a Monte Carlo method with 
 
 
 5. **Data Export and Visualization**  
-   Results are plotted and optionally saved to CSV files for further analysis.
 ![image](https://github.com/user-attachments/assets/fb2e5772-df56-4daf-86fd-c6c4951038aa)
-
+Results are plotted and optionally saved to CSV files for further analysis.
 
 ---
 
