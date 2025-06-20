@@ -40,9 +40,11 @@ This project simulates future stock price paths using a Monte Carlo method with 
 2. **Jump Detection**  
    Users can choose to auto-detect jumps based on statistical deviations from a specified sigma cutoff, or manually input their own values for average jump frequency (λ), mean jump size (μ<sub>j</sub>), and jump volatility (σ<sub>j</sub>).
    Example for auto-detect output:
+
 ![image](https://github.com/user-attachments/assets/c7dd2d23-05ed-4c8f-8d55-096c6a5b7951)
 
    Example for user input and no average jump:
+
 ![image](https://github.com/user-attachments/assets/f679d4be-e6a3-42db-96f5-3a1061414da9)
 
    
