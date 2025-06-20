@@ -38,13 +38,19 @@ This project simulates future stock price paths using a Monte Carlo method with 
 ![image](https://github.com/user-attachments/assets/e4d38bad-bc00-4f53-816c-c35b34a74058)
 
 2. **Jump Detection**  
-   Log returns are analyzed to identify statistical jumps beyond a defined σ-cutoff.
+   Users can choose to auto-detect jumps based on statistical deviations from a specified sigma cutoff, or manually input their own values for average jump frequency (λ), mean jump size (μ<sub>j</sub>), and jump volatility (σ<sub>j</sub>).
+   Example for auto-detect output:
+![image](https://github.com/user-attachments/assets/c7dd2d23-05ed-4c8f-8d55-096c6a5b7951)
 
-3. **Monte Carlo Simulation**  
+   Example for user input and no average jump:
+![image](https://github.com/user-attachments/assets/f679d4be-e6a3-42db-96f5-3a1061414da9)
+
+   
+4. **Monte Carlo Simulation**  
    Thousands of future paths are simulated incorporating both drift, volatility, and jump events.
 ![image](https://github.com/user-attachments/assets/45b25349-dc2c-4a62-8890-67977750b411)
 
-4. **Risk Calculation**  
+5. **Risk Calculation**  
    From simulated ending prices:
    - `VaR` is estimated at a user-defined confidence level
    - `CVaR` is the average of losses beyond the VaR threshold
@@ -52,7 +58,7 @@ This project simulates future stock price paths using a Monte Carlo method with 
 ![image](https://github.com/user-attachments/assets/c9317986-2772-43cf-9db2-d42196a12f80)
 
 
-5. **Data Export and Visualization**  
+6. **Data Export and Visualization**  
 ![image](https://github.com/user-attachments/assets/fb2e5772-df56-4daf-86fd-c6c4951038aa)
 Results are plotted and optionally saved to CSV files for further analysis.
 
