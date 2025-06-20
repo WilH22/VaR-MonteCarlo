@@ -62,6 +62,7 @@ This project simulates future stock price paths using a Monte Carlo method with 
 
 6. **Data Export and Visualization**  
 ![image](https://github.com/user-attachments/assets/fb2e5772-df56-4daf-86fd-c6c4951038aa)
+
 Results are plotted and optionally saved to CSV files for further analysis.
 
 ---
