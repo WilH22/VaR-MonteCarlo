@@ -35,7 +35,39 @@ data=fetch_stock_data(ticker, start, end)
 log_returns, drift, stdev = compute_parameters(data)
 
 # Step 3: Calculate jump parameters 
-total_days,total_jumps,jump_df, lambda_, mu_j, sigma_j = detect_jumps(log_returns, sigma_cutoff=3)
+use_auto_jump = input("Do you want to auto-detect jumps? (y/n): ").strip().lower()
+
+if use_auto_jump == "y":
+    sigma_cutoff_input = input("Input your sigma cutoff (default = 3): ").strip()
+    sigma_cutoff = float(sigma_cutoff_input) if sigma_cutoff_input else 3.0
+
+    total_days, total_jumps, jump_df, lambda_, mu_j, sigma_j = detect_jumps(log_returns, sigma_cutoff)
+    print(f"\n✅ Auto-detected {total_jumps} jumps over {total_days} trading days")
+    print("📈 Simulating Price Paths using GBM with Jump Diffusion Model")
+
+else:
+    # Manual input mode
+    avg_jump_input = input("Enter average jumps per year (e.g., 2.0, default = 0): ").strip()
+    lambda_ = float(avg_jump_input) if avg_jump_input else 0
+
+    if lambda_ != 0:
+        mu_j_input = input("Enter average jump size (mu_j), e.g., -0.02 (default = -0.02): ").strip()
+        sigma_j_input = input("Enter jump volatility (sigma_j), e.g., 0.10 (default = 0.10): ").strip()
+
+        mu_j = float(mu_j_input) if mu_j_input else -0.02
+        sigma_j = float(sigma_j_input) if sigma_j_input else 0.10
+        print("\n✏️  Manual input of jump parameters accepted")
+        print("📈 Simulating Price Paths using GBM with Jump Diffusion Model")
+
+    else:
+        mu_j = 0
+        sigma_j = 0
+        print("\n📉 No jumps will be included (lambda = 0)")
+        print("📈 Simulating Price Paths using standard GBM")
+
+    jump_df = None
+    total_days = len(log_returns)
+    total_jumps = int(lambda_ * total_days / 252)
 
 # Step 4: Simulate price paths (Jump Diffusion Model)
 price_paths = simulate_price_paths(data, drift, stdev, days, trials, lambda_, mu_j, sigma_j)
