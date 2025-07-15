@@ -73,7 +73,7 @@ else:
 price_paths = simulate_price_paths(data, drift, stdev, days, trials, lambda_, mu_j, sigma_j)
 
 # Step 5: Plot price paths
-plot_price_paths(price_paths)
+plot_price_paths(ticker, price_paths)
 
 #Step 6: Calculate Expected Value at Risk (VaR) and Shortfall (CVaR)
 print("\n🔒 Enter your desired confidence level for VaR calculation.") #default will take CI =0.95
@@ -88,7 +88,7 @@ print(f"📉 {int(confidence_level*100)}% VaR: ${VaR_price:.2f}")
 print(f"💥 Expected Shortfall (CVaR): ${CVaR:.2f}")
 
 #Step 7: Plot VaR in Histogram
-plot_var(ending_prices, VaR_price, confidence_level)
+plot_var(ticker,ending_prices, VaR_price, confidence_level)
 
 #Step 8: Tabulate the data 
 summary_df = summary_data(ticker, start, end, S0, price_paths, confidence_level,
@@ -108,13 +108,12 @@ if save_csv:
     }
 
     for name, df in files_to_save.items():
-        # Convert to DataFrame if it's a NumPy array
+    # Convert to DataFrame if it’s a NumPy array
         if isinstance(df, np.ndarray):
             df = pd.DataFrame(df)
 
-        filename = f"data/{ticker}_{name}.csv"
+        filename = f"VaR-MonteCarlo/data/{ticker}_{name}.csv"
         df.to_csv(filename, index=False)
-        print(f"📄 {name.replace('_', ' ').title()} data saved to {filename}")
-        print()  # extra newline
+        print(f"✅ {name.replace('_', ' ').title()} data saved to {filename}\n")
 else:
     pass
