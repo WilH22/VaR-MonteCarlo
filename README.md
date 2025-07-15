@@ -70,10 +70,11 @@ Results are plotted and optionally saved to CSV files for further analysis.
 ## 📌 Example Output
 
 **Exports**
-- `data/{Ticker}_price_paths.csv` — Simulated prices for all trials
-- `data/{Ticker}_jumps.csv` — Dates where return jumps exceeded threshold
-- `data/{Ticker}_summary.csv` — Summary stats (VaR, CVaR, lambda, etc.)
-
+- `data/{Ticker}_price_paths.csv` — Simulated prices for all trials  
+- `data/{Ticker}_jumps.csv` — Dates where return jumps exceeded threshold  
+- `data/{Ticker}_summary.csv` — Summary stats (VaR, CVaR, λ, etc.)
+- `data/{Ticker}_Simulated_Price_Paths.png` — 📈 Line chart of simulated price paths  
+- `data/{Ticker}_Distribution_of_Final_Simulated_Prices.png` — 📊 Histogram showing final price distribution with VaR cutoff
 ---
 
 ## ✏️ User Inputs
